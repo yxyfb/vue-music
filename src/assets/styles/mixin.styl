@@ -1,0 +1,57 @@
+bg-image($url)
+    background-image: url($url + '@2x.png')
+    @media (-webkit-min-device-pixel-ratio:3), (min-device-pixel-ratio:3)   //设备像素比为3时，使用3X图
+        background-image: url($url + '@3x.png')
+
+no-wrap()
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+
+//几个主页面的位置
+absoluteTop()
+    position: absolute
+    top: 1.76rem
+    bottom: 0
+    left: 0
+    right: 0
+
+//相对于父元素全遮盖
+absolute()
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+//相对于屏幕全遮盖
+fixed()
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+//垂直居中
+flex-center(draction=row)
+    display: flex
+    flex-direction: draction   //主轴方向
+    align-items: center      //交叉轴上对齐方式
+    justify-content: center  //主轴上对齐方式
+
+//两边对齐，中间auto
+flex-between()
+    display: flex
+    align-items: center      
+    justify-content: space-between  
+
+border-1px($color)
+    position: relative
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        border-top: 1px solid $color
